@@ -1,10 +1,19 @@
-const Home = (props) => {
-  console.log("props in Home: ", props);
+import { Wrapper, Button } from "../componentsStyled";
+
+const Home = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-      <p>{props.coolWord}</p>
-    </div>
+    <Wrapper>
+      <h1>Homepage</h1>
+      <Button color="white" background="black">
+        Button 1
+      </Button>
+      <Button color="white" background="red">
+        Button 2
+      </Button>
+      <Button color="green" background="black">
+        Button 3
+      </Button>
+    </Wrapper>
   );
 };
 

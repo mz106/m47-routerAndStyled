@@ -1,41 +1,33 @@
 import { useState } from "react";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+import { Wrapper } from "./componentsStyled";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
 
 function App() {
-  const [coolWord, setCoolWord] = useState("Coooooool!!!");
-
-  const [employeeArr, setEmployeeArr] = useState([
-    { id: 1, name: "michael" },
-    { id: 2, name: "sarah" },
-    { id: 3, name: "kim" },
-  ]);
-
-  const [userLoggedIn, setUserLoggedIn] = useState({
-    id: 1,
-    name: "michael",
-    password: "secure password",
-  });
-
   return (
     <>
       <div>
         <BrowserRouter>
+          <Wrapper>
+            <h1>Michaels cool website</h1>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+              </ul>
+            </nav>
+          </Wrapper>
           <Routes>
-            <Route
-              path="/"
-              element={
-                <Home
-                  employeeArr={employeeArr}
-                  coolWord={coolWord}
-                  userLoggedIn={userLoggedIn}
-                />
-              }
-            />
-            <Route path="/about" element={<About coolWord={coolWord} />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </BrowserRouter>
       </div>

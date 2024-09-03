@@ -1,8 +1,7 @@
-const About = (props) => {
+const About = () => {
   return (
     <div>
       <h1>AboutPage</h1>
-      <p>{props.coolWord}</p>
     </div>
   );
 };
